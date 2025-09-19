@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Associates - Premium Tea Blending & Sourcing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5530;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .logo::after {
+            content: '🍃';
+            margin-left: 10px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 223, 186, 0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2c5530, #8B4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #5a6c57;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #2c5530, #4a7c59);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(44, 85, 48, 0.3);
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+        }
+
+        /* Tea Types Section */
+        .tea-types {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tea-types h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5530;
+        }
+
+        .tea-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tea-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tea-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #2c5530, #4a7c59, #8B4513);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tea-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .tea-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tea-image {
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tea-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .tea-card:hover .tea-image img {
+            transform: scale(1.05);
+        }
+
+        .tea-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2c5530;
+        }
+
+        .tea-card p {
+            color: #5a6c57;
+            margin-bottom: 1rem;
+        }
+
+        .tea-grade {
+            font-weight: bold;
+            color: #8B4513;
+            background: rgba(139, 69, 19, 0.1);
+            padding: 5px 15px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Blends Section */
+        .blends {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blends h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5530;
+        }
+
+        .blend-category {
+            margin-bottom: 3rem;
+        }
+
+        .blend-category h3 {
+            font-size: 2rem;
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .blend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blend-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blend-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c5530, #4a7c59, #8B4513);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .blend-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .blend-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .blend-image {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .blend-image img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blend-card:hover .blend-image img {
+            transform: scale(1.05);
+        }
+
+        .blend-card h4 {
+            font-size: 1.3rem;
+            color: #2c5530;
+            margin-bottom: 0.8rem;
+        }
+
+        .blend-card p {
+            color: #5a6c57;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5530;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .tea-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blend-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Spring Associates</div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="brand-logo">
+                    <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover;" />
+                </div>
+                <h1>Premium Tea Blending & Sourcing</h1>
+                <p>Specializing in customized tea blending with diverse standards at various price points</p>
+                <a href="#contact" class="cta-button">Create Your Signature Blend</a>
+            </div>
+        </section>
+
+        <section class="tea-types fade-in">
+            <h2>Two Main Types of Tea</h2>
+            <div class="tea-grid">
+                <div class="tea-card">
+                    <div class="tea-image">
+                        <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/pure-darjeeling-tea.jpg" alt="Assam Tea" />
+                    </div>
+                    <h3>🫖 Assam Tea</h3>
+                    <p>Processed into granular form for a strong, brisk cup. Perfect for teabags and full-bodied brews that awaken your senses.</p>
+                    <div class="tea-grade">Popular: Assam PD & BOP</div>
+                </div>
+                <div class="tea-card">
+                    <div class="tea-image">
+                        <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/ashwagandha-infused-tea.jpg" alt="Darjeeling Tea" />
+                    </div>
+                    <h3>🥂 Darjeeling Tea</h3>
+                    <p>The "champagne of teas" with unique muscatel flavor and golden color. Premium quality for upscale products.</p>
+                    <div class="tea-grade">Premium: FTGFOP1 Grade</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blends fade-in">
+            <h2>Our Signature Blends</h2>
+            
+            <div class="blend-category">
+                <h3>🌿 Assam-Based Creative Blends</h3>
+                <div class="blend-grid">
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/ashwagandha-infused-tea.jpg" alt="Ashwagandha Infused Tea" />
+                        </div>
+                        <h4>🧘 Ashwagandha Infused Tea</h4>
+                        <p>Powerful, restorative brew with strong Assam base balancing earthy Ashwagandha notes.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/chai-spice-blend-tea.jpg" alt="Chai Spice Blend Tea" />
+                        </div>
+                        <h4>🫖 Chai Spice Blend Tea</h4>
+                        <p>Rich Assam blend with cinnamon, cardamom, cloves, and ginger for perfect flavor balance.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/tulsi-holy-basil-tea.jpg" alt="Tulsi Holy Basil Tea" />
+                        </div>
+                        <h4>🙏 Tulsi (Holy Basil) Infused Tea</h4>
+                        <p>Brisk, spicy infusion pairing lively Assam with pungent Tulsi essence.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/saunf-fennel-seed-tea.jpg" alt="Saunf Fennel Seed Tea" />
+                        </div>
+                        <h4>🌱 Saunf (Fennel Seed) Infused Tea</h4>
+                        <p>Unique blend with robust Assam and subtle licorice-like sweetness of fennel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blend-category">
+                <h3>✨ Darjeeling-Based Premium Blends</h3>
+                <div class="blend-grid">
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/pure-darjeeling-tea.jpg" alt="Pure Darjeeling Tea" />
+                        </div>
+                        <h4>🍃 Pure Darjeeling Tea</h4>
+                        <p>Unblended "champagne of teas" with delicate, golden infusion and unique muscatel flavor.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/anar-hibiscus-infused-tea.jpg" alt="Anar Hibiscus Tea" />
+                        </div>
+                        <h4>🌺 Anar Hibiscus Infused Tea</h4>
+                        <p>Visually stunning blend uniting Darjeeling with tart hibiscus and pomegranate.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/berries-citrus-zest-tea.jpg" alt="Berries Citrus Zest Tea" />
+                        </div>
+                        <h4>🫐 Berries & Citrus Zest Infused Tea</h4>
+                        <p>Delicate floral Darjeeling meets tangy berries and vibrant citrus zest.</p>
+                    </div>
+                    <div class="blend-card">
+                        <div class="blend-image">
+                            <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/pudina-mint-infused-tea.jpg" alt="Pudina Mint Tea" />
+                        </div>
+                        <h4>🌿 Pudina (Mint) Infused Tea</h4>
+                        <p>Refreshing blend marrying crisp mint with light, airy Darjeeling essence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services fade-in">
+            <h2>Our Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Customized Blending</h3>
+                    <p>Create unique blends ensuring consistent taste and quality for your signature products</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Variety of Standards</h3>
+                    <p>Large selection of pre-existing blends at different price points for quick product line establishment</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>Packaging Versatility</h3>
+                    <p>Multiple packaging formats including double-chamber teabags for flexible market entry</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact fade-in" id="contact">
+            <h2>Ready to Create Your Signature Tea Blend?</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email:</strong><br>
+                        varunbagiaplications@gmail.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        +1 571-361-0835
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 1.2rem; margin-top: 2rem;">Let's discuss your vision and bring it to life!</p>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Tea card hover effects
+        document.querySelectorAll('.tea-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+            });
+        });
+    </script>
+</body>
+</html>
