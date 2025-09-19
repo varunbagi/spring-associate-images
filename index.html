@@ -15,7 +15,7 @@
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #68BB59 0%, #5a9e4d 100%);
             min-height: 100vh;
         }
 
@@ -27,7 +27,7 @@
 
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: #FDF5E6;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -60,7 +60,7 @@
         .logo {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #2c5530;
+            color: #68BB59;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
         }
@@ -80,7 +80,7 @@
         .hero {
             padding: 4rem 0;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: #FDF5E6;
             margin: 2rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -95,7 +95,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 223, 186, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(104, 187, 89, 0.1) 0%, transparent 70%);
             animation: rotate 20s linear infinite;
         }
 
@@ -112,7 +112,7 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #2c5530, #8B4513);
+            background: linear-gradient(45deg, #68BB59, #5a9e4d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -139,28 +139,28 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #2c5530, #4a7c59);
-            color: white;
+            background: linear-gradient(45deg, #68BB59, #5a9e4d);
+            color: #FDF5E6;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(44, 85, 48, 0.3);
+            box-shadow: 0 5px 15px rgba(104, 187, 89, 0.3);
             animation: slideInUp 1s ease-out 0.6s both;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(44, 85, 48, 0.4);
-            background: linear-gradient(45deg, #4a7c59, #2c5530);
+            box-shadow: 0 8px 25px rgba(104, 187, 89, 0.4);
+            background: linear-gradient(45deg, #5a9e4d, #68BB59);
         }
 
         /* Tea Types Section */
         .tea-types {
             padding: 4rem 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: #FDF5E6;
             margin: 2rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -170,7 +170,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c5530;
+            color: #68BB59;
         }
 
         .tea-grid {
@@ -181,13 +181,14 @@
         }
 
         .tea-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #FAF3E8 0%, #F5EFE0 100%);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(104, 187, 89, 0.2);
         }
 
         .tea-card::before {
@@ -197,14 +198,15 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #2c5530, #4a7c59, #8B4513);
+            background: linear-gradient(90deg, #68BB59, #7AC865, #8BD470);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .tea-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(104, 187, 89, 0.2);
+            background: linear-gradient(135deg, #F5EFE0 0%, #F0E8D8 100%);
         }
 
         .tea-card:hover::before {
@@ -231,7 +233,7 @@
         .tea-card h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #2c5530;
+            color: #68BB59;
         }
 
         .tea-card p {
@@ -241,8 +243,8 @@
 
         .tea-grade {
             font-weight: bold;
-            color: #8B4513;
-            background: rgba(139, 69, 19, 0.1);
+            color: #FDF5E6;
+            background: #68BB59;
             padding: 5px 15px;
             border-radius: 25px;
             display: inline-block;
@@ -252,7 +254,7 @@
         /* Blends Section */
         .blends {
             padding: 4rem 0;
-            background: rgba(255, 255, 255, 0.9);
+            background: #FDF5E6;
             margin: 2rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -262,7 +264,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c5530;
+            color: #68BB59;
         }
 
         .blend-category {
@@ -271,7 +273,7 @@
 
         .blend-category h3 {
             font-size: 2rem;
-            color: #8B4513;
+            color: #5a9e4d;
             margin-bottom: 1.5rem;
             text-align: center;
         }
@@ -287,14 +289,15 @@
         }
 
         .blend-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: #FAF3E8;
             border-radius: 15px;
             padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(104, 187, 89, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(104, 187, 89, 0.2);
         }
 
         .blend-card::before {
@@ -304,14 +307,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #2c5530, #4a7c59, #8B4513);
+            background: linear-gradient(90deg, #68BB59, #7AC865, #8BD470);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .blend-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(104, 187, 89, 0.2);
+            background: #F5EFE0;
         }
 
         .blend-card:hover::before {
@@ -337,7 +341,7 @@
 
         .blend-card h4 {
             font-size: 1.3rem;
-            color: #2c5530;
+            color: #68BB59;
             margin-bottom: 0.8rem;
         }
 
@@ -350,7 +354,7 @@
         /* Services Section */
         .services {
             padding: 4rem 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: #FDF5E6;
             margin: 2rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -360,7 +364,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c5530;
+            color: #68BB59;
         }
 
         .services-grid {
@@ -372,15 +376,15 @@
         .service-card {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #68BB59 0%, #5a9e4d 100%);
+            color: #FDF5E6;
             border-radius: 15px;
             transition: all 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(104, 187, 89, 0.3);
         }
 
         .service-icon {
@@ -391,8 +395,8 @@
         /* Contact Section */
         .contact {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
-            color: white;
+            background: linear-gradient(135deg, #68BB59 0%, #5a9e4d 100%);
+            color: #FDF5E6;
             margin: 2rem 0;
             border-radius: 20px;
             text-align: center;
@@ -416,14 +420,15 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(253, 245, 230, 0.15);
             padding: 1rem 2rem;
             border-radius: 50px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(253, 245, 230, 0.3);
         }
 
         .contact-item:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(253, 245, 230, 0.25);
             transform: scale(1.05);
         }
 
@@ -659,11 +664,11 @@
         // Tea card hover effects
         document.querySelectorAll('.tea-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)';
+                this.style.background = 'linear-gradient(135deg, #F5EFE0 0%, #F0E8D8 100%)';
             });
             
             card.addEventListener('mouseleave', function() {
-                this.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+                this.style.background = 'linear-gradient(135deg, #FAF3E8 0%, #F5EFE0 100%)';
             });
         });
     </script>
