@@ -34,9 +34,10 @@
 
         .nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            position: relative;
         }
 
         .logo {
@@ -49,6 +50,77 @@
         .logo::after {
             content: '🍃';
             margin-left: 10px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #68BB59;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #FDF5E6;
+            min-width: 200px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(104, 187, 89, 0.1);
         }
 
         /* Hero Section */
@@ -378,6 +450,18 @@
         <div class="container">
             <nav class="nav">
                 <div class="logo">Spring Associates</div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#">Home</a>
+                    <a href="#">Our tea types</a>
+                    <a href="#">Signature blends</a>
+                    <a href="#">About us</a>
+                    <a href="#">Contact us</a>
+                </div>
             </nav>
         </div>
     </div>
