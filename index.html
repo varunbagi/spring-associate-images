@@ -30,32 +30,13 @@
             background: #FDF5E6;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 1rem 0;
-            position: relative;
         }
 
         .logo {
@@ -63,89 +44,11 @@
             font-weight: bold;
             color: #000000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         .logo::after {
             content: '🍃';
             margin-left: 10px;
-            animation: float 2s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1000;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #68BB59;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Navigation Menu */
-        .nav-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #FDF5E6;
-            min-width: 200px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-            overflow: hidden;
-            transform: translateY(-10px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .nav-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .nav-menu a {
-            display: block;
-            padding: 15px 20px;
-            text-decoration: none;
-            color: #000000;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-menu a:last-child {
-            border-bottom: none;
-        }
-
-        .nav-menu a:hover {
-            background-color: rgba(104, 187, 89, 0.1);
         }
 
         /* Hero Section */
@@ -156,29 +59,6 @@
             margin: 2rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(104, 187, 89, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
@@ -188,25 +68,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: slideInUp 1s ease-out;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero p {
             font-size: 1.3rem;
             color: #000000;
             margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.3s both;
         }
 
         .cta-button {
@@ -220,13 +87,11 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(104, 187, 89, 0.3);
-            animation: slideInUp 1s ease-out 0.6s both;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(104, 187, 89, 0.4);
-            background: linear-gradient(45deg, #5a9e4d, #68BB59);
         }
 
         /* Tea Types Section */
@@ -258,32 +123,12 @@
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
             border: 2px solid rgba(104, 187, 89, 0.2);
-            cursor: pointer;
-        }
-
-        .tea-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #68BB59, #7AC865, #8BD470);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
         }
 
         .tea-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(104, 187, 89, 0.2);
-            background: linear-gradient(135deg, #F5EFE0 0%, #F0E8D8 100%);
-        }
-
-        .tea-card:hover::before {
-            transform: scaleX(1);
         }
 
         .tea-image {
@@ -368,31 +213,12 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(104, 187, 89, 0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
             border: 1px solid rgba(104, 187, 89, 0.2);
-        }
-
-        .blend-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #68BB59, #7AC865, #8BD470);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
         }
 
         .blend-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(104, 187, 89, 0.2);
-            background: #F5EFE0;
-        }
-
-        .blend-card:hover::before {
-            transform: scaleX(1);
         }
 
         .blend-image {
@@ -544,18 +370,6 @@
                 gap: 1rem;
             }
         }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
@@ -563,24 +377,12 @@
         <div class="container">
             <nav class="nav">
                 <div class="logo">Spring Associates</div>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-menu" id="navMenu">
-                    <a href="javascript:void(0)" onclick="navigateToSection('hero')">Home</a>
-                    <a href="javascript:void(0)" onclick="navigateToSection('tea-types')">Our tea types</a>
-                    <a href="javascript:void(0)" onclick="navigateToSection('signature-blends')">Signature blends</a>
-                    <a href="javascript:void(0)" onclick="navigateToSection('services')">About us</a>
-                    <a href="javascript:void(0)" onclick="navigateToSection('contact')">Contact us</a>
-                </div>
             </nav>
         </div>
     </div>
 
     <div class="container">
-        <section class="hero" id="hero">
+        <section class="hero">
             <div class="hero-content">
                 <div class="brand-logo">
                     <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover;" />
@@ -591,10 +393,10 @@
             </div>
         </section>
 
-        <section class="tea-types fade-in" id="tea-types">
+        <section class="tea-types">
             <h2>Two Main Types of Tea</h2>
             <div class="tea-grid">
-                <div class="tea-card" onclick="scrollToSection('assam-blends')">
+                <div class="tea-card">
                     <div class="tea-image">
                         <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/pure-darjeeling-tea.jpg" alt="Assam Tea" />
                     </div>
@@ -602,7 +404,7 @@
                     <p>Processed into granular form for a strong, brisk cup. Perfect for teabags and full-bodied brews that awaken your senses.</p>
                     <div class="tea-grade">Popular: Assam PD & BOP</div>
                 </div>
-                <div class="tea-card" onclick="scrollToSection('darjeeling-blends')">
+                <div class="tea-card">
                     <div class="tea-image">
                         <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/ashwagandha-infused-tea.jpg" alt="Darjeeling Tea" />
                     </div>
@@ -613,10 +415,10 @@
             </div>
         </section>
 
-        <section class="blends fade-in" id="signature-blends">
+        <section class="blends">
             <h2>Our Signature Blends</h2>
             
-            <div class="blend-category" id="assam-blends">
+            <div class="blend-category">
                 <h3>🌿 Assam-Based Creative Blends</h3>
                 <div class="blend-grid">
                     <div class="blend-card">
@@ -650,7 +452,7 @@
                 </div>
             </div>
 
-            <div class="blend-category" id="darjeeling-blends">
+            <div class="blend-category">
                 <h3>✨ Darjeeling-Based Premium Blends</h3>
                 <div class="blend-grid">
                     <div class="blend-card">
@@ -685,7 +487,7 @@
             </div>
         </section>
 
-        <section class="services fade-in" id="services">
+        <section class="services">
             <h2>Our Expertise</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -706,7 +508,7 @@
             </div>
         </section>
 
-        <section class="contact fade-in" id="contact">
+        <section class="contact" id="contact">
             <h2>Ready to Create Your Signature Tea Blend?</h2>
             <div class="contact-info">
                 <div class="contact-item">
@@ -727,101 +529,5 @@
             <p style="font-size: 1.2rem; margin-top: 2rem;">Let's discuss your vision and bring it to life!</p>
         </section>
     </div>
-
-    <script>
-        // Function to toggle hamburger menu
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.getElementById('navMenu');
-            
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        }
-
-        // Function to close menu when a link is clicked
-        function closeMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.getElementById('navMenu');
-            
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-
-        // Function to navigate to sections
-        function navigateToSection(sectionId) {
-            closeMenu();
-            setTimeout(() => {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 100);
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.getElementById('navMenu');
-            
-            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Function to scroll to specific blend section
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-        });
-    </script>
 </body>
 </html>
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Tea card hover effects
-        document.querySelectorAll('.tea-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(135deg, #F5EFE0 0%, #F0E8D8 100%)';
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.background = 'linear-gradient(135deg, #FAF3E8 0%, #F5EFE0 100%)';
-                this.style.transform = 'translateY(0px)';
-            });
-        
