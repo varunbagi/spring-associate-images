@@ -66,6 +66,17 @@
             position: relative;
         }
 
+        .logo::after {
+            content: '🍃';
+            margin-left: 10px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
         /* Hamburger Menu */
         .hamburger {
             display: flex;
@@ -135,17 +146,6 @@
 
         .nav-menu a:hover {
             background-color: rgba(104, 187, 89, 0.1);
-        }
-
-        .logo::after {
-            content: '🍃';
-            margin-left: 10px;
-            animation: float 2s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
         }
 
         /* Hero Section */
@@ -822,7 +822,4 @@
                 this.style.background = 'linear-gradient(135deg, #FAF3E8 0%, #F5EFE0 100%)';
                 this.style.transform = 'translateY(0px)';
             });
-        });
-    </script>
-</body>
-</html>
+        
