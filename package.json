@@ -1,0 +1,13 @@
+{
+  "name": "spring-associates-tests",
+  "version": "1.0.0",
+  "description": "Automated tests for Spring Associates website",
+  "scripts": {
+    "test": "node tests/website-tests.js && node tests/lighthouse-test.js"
+  },
+  "dependencies": {
+    "puppeteer": "^19.0.0",
+    "lighthouse": "^10.0.0",
+    "chrome-launcher": "^0.15.0"
+  }
+}
