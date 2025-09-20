@@ -1,16 +1,11 @@
-# GitHub Actions Workflow for Spring Associates Website Testing
-# File: .github/workflows/website-tests.yml
-
 name: Website Automated Tests
 
-# When to run tests
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
   schedule:
-    # Run tests daily at 9 AM UTC
     - cron: '0 9 * * *'
 
 jobs:
@@ -19,17 +14,17 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
     
     - name: Install dependencies
       run: |
         npm init -y
-        npm install puppeteer jest lighthouse
+        npm install puppeteer jest lighthouse chrome-launcher
     
     - name: Run Website Tests
       run: |
@@ -40,7 +35,7 @@ jobs:
         node tests/lighthouse-test.js
     
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results
