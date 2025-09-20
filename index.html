@@ -456,7 +456,7 @@
                     <span></span>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="#">Home</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('hero')">Home</a>
                     <a href="#">Our tea types</a>
                     <a href="#">Signature blends</a>
                     <a href="#">About us</a>
@@ -467,7 +467,7 @@
     </div>
 
     <div class="container">
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <div class="brand-logo">
                     <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover;" />
@@ -616,6 +616,38 @@
     </div>
 
     <script>
+        // Function to toggle hamburger menu
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        // Function to close menu
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        // Function to navigate to sections
+        function navigateToSection(sectionId) {
+            closeMenu();
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
+
         // Function to scroll to specific blend section
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
