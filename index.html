@@ -55,6 +55,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            position: relative;
         }
 
         .logo {
@@ -63,6 +64,77 @@
             color: #000000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #68BB59;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #FDF5E6;
+            min-width: 200px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(104, 187, 89, 0.1);
         }
 
         .logo::after {
@@ -396,7 +468,7 @@
         }
 
         .service-card:nth-child(3) {
-            background: linear-gradient(135deg, #C5A8D4 0%, #B794C8 100%);
+            background: linear-gradient(135deg, #F0BFF5 0%, #E6A8F0 100%);
         }
 
         .service-icon {
@@ -491,12 +563,24 @@
         <div class="container">
             <nav class="nav">
                 <div class="logo">Spring Associates</div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#hero" onclick="closeMenu()">Home</a>
+                    <a href="#tea-types" onclick="closeMenu()">Our tea types</a>
+                    <a href="#signature-blends" onclick="closeMenu()">Signature blends</a>
+                    <a href="#services" onclick="closeMenu()">About us</a>
+                    <a href="#contact" onclick="closeMenu()">Contact us</a>
+                </div>
             </nav>
         </div>
     </div>
 
     <div class="container">
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <div class="brand-logo">
                     <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover;" />
@@ -507,7 +591,7 @@
             </div>
         </section>
 
-        <section class="tea-types fade-in">
+        <section class="tea-types fade-in" id="tea-types">
             <h2>Two Main Types of Tea</h2>
             <div class="tea-grid">
                 <div class="tea-card" onclick="scrollToSection('assam-blends')">
@@ -529,7 +613,7 @@
             </div>
         </section>
 
-        <section class="blends fade-in">
+        <section class="blends fade-in" id="signature-blends">
             <h2>Our Signature Blends</h2>
             
             <div class="blend-category" id="assam-blends">
@@ -601,7 +685,7 @@
             </div>
         </section>
 
-        <section class="services fade-in">
+        <section class="services fade-in" id="services">
             <h2>Our Expertise</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -645,6 +729,35 @@
     </div>
 
     <script>
+        // Function to toggle hamburger menu
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        // Function to close menu when a link is clicked
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
         // Function to scroll to specific blend section
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
