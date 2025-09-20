@@ -569,11 +569,11 @@
                     <span></span>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="#hero" onclick="closeMenu()">Home</a>
-                    <a href="#tea-types" onclick="closeMenu()">Our tea types</a>
-                    <a href="#signature-blends" onclick="closeMenu()">Signature blends</a>
-                    <a href="#services" onclick="closeMenu()">About us</a>
-                    <a href="#contact" onclick="closeMenu()">Contact us</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('hero')">Home</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('tea-types')">Our tea types</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('signature-blends')">Signature blends</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('services')">About us</a>
+                    <a href="javascript:void(0)" onclick="navigateToSection('contact')">Contact us</a>
                 </div>
             </nav>
         </div>
@@ -745,6 +745,20 @@
             
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+        }
+
+        // Function to navigate to sections
+        function navigateToSection(sectionId) {
+            closeMenu();
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
         }
 
         // Close menu when clicking outside
