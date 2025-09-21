@@ -53,13 +53,22 @@
         }
 
         /* Hamburger Menu */
-        .hamburger {
+       .hamburger {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             padding: 10px;
             z-index: 1000;
         }
+        
+        .hamburger svg {
+            transition: 0.3s ease;
+        }
+        
+        .hamburger.active svg {
+            transform: rotate(180deg);
+}
 
         .hamburger span {
             width: 25px;
