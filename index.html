@@ -41,10 +41,21 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 2.5rem;
             font-weight: bold;
             color: #000000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-image {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #68BB59;
         }
 
         .logo::after {
@@ -410,6 +421,16 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+                gap: 6px;
+            }
+            
+            .logo-image {
+                width: 20px;
+                height: 20px;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -438,7 +459,10 @@
     <div class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">Spring Associates</div>
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" class="logo-image" />
+                    Spring Associates
+                </div>
                 <div class="hamburger" onclick="toggleMenu()">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Teapot body -->
