@@ -113,6 +113,7 @@
             font-weight: 500;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
         .nav-menu a:last-child {
@@ -456,11 +457,11 @@
                     <span></span>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="javascript:void(0)" onclick="navigateToSection('hero')">Home</a>
-                    <a href="#">Our tea types</a>
-                    <a href="#">Signature blends</a>
-                    <a href="#">About us</a>
-                    <a href="#">Contact us</a>
+                    <a onclick="navigateToSection('hero')">Home</a>
+                    <a onclick="navigateToSection('tea-types')">Our tea types</a>
+                    <a onclick="navigateToSection('blends')">Signature blends</a>
+                    <a onclick="navigateToSection('services')">About us</a>
+                    <a onclick="navigateToSection('contact')">Contact us</a>
                 </div>
             </nav>
         </div>
@@ -478,7 +479,7 @@
             </div>
         </section>
 
-        <section class="tea-types">
+        <section class="tea-types" id="tea-types">
             <h2>Two Main Types of Tea</h2>
             <div class="tea-grid">
                 <div class="tea-card" onclick="scrollToSection('assam-blends')">
@@ -500,7 +501,7 @@
             </div>
         </section>
 
-        <section class="blends">
+        <section class="blends" id="blends">
             <h2>Our Signature Blends</h2>
             
             <div class="blend-category" id="assam-blends">
@@ -572,7 +573,7 @@
             </div>
         </section>
 
-        <section class="services">
+        <section class="services" id="services">
             <h2>Our Expertise</h2>
             <div class="services-grid">
                 <div class="service-card">
