@@ -185,9 +185,11 @@
 
         .tea-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(2, 1fr);    /* Forces exactly 2 columns for better centering */
+            gap: 6rem;                                /* Keep the 6rem gap you already have */
+            margin: 0 auto 3rem auto;                 /* CENTERS the grid */
+            max-width: 800px;                         /* Smaller max-width for more central appearance */
+            padding: 0 2rem;  
         }
 
         .tea-card {
