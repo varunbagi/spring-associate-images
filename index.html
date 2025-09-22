@@ -55,6 +55,13 @@
             font-weight: bold;
             color: #000000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
         }
 
         .logo-image {
@@ -466,7 +473,7 @@
     <div class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">
+                <div class="logo" onclick="navigateToSection('hero')">
                     <img src="https://raw.githubusercontent.com/varunbagi/spring-associate-images/main/spring-associates-logo.jpg" alt="Spring Associates Logo" class="logo-image" />
                     Spring Associates
                 </div>
